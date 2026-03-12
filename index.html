@@ -350,7 +350,7 @@
                 <div class="contact-detail gs-up">
                     <div class="contact-item">
                         <span class="contact-item-label">General Inquiry</span>
-                        <a href="mailto:hello@dyrah.co" class="contact-item-value">hello@dyrah.co</a>
+                        <a href="mailto:dyrahagency@gmail.com" class="contact-item-value">dyrahagency@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <span class="contact-item-label">Global Presence</span>
@@ -373,20 +373,24 @@
             </div>
 
             <div class="contact-right gs-up">
-                <div class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                    <input type="hidden" name="access_key" value="6d39d3e9-a2e3-445e-8346-d8968553a6f2">
+                    <input type="hidden" name="subject" value="New Website Inquiry - Dyrah">
+                    <input type="hidden" name="from_name" value="Dyrah Website">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">Your Name</label>
-                            <input type="text" class="form-input" placeholder="">
+                            <input type="text" name="name" class="form-input" placeholder="" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Email Address</label>
-                            <input type="email" class="form-input" placeholder="">
+                            <input type="email" name="email" class="form-input" placeholder="" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Service Needed</label>
-                        <select class="form-select">
+                        <select name="service" class="form-select" required>
                             <option value="">Select a core service...</option>
                             <option>Brand Identity</option>
                             <option>Social Media Design</option>
@@ -398,11 +402,13 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Tell Us About Your Project</label>
-                        <textarea class="form-textarea"
-                            placeholder="Detail your brand, ultimate goals, and what you're looking for..."></textarea>
+                        <textarea name="message" class="form-textarea"
+                            placeholder="Detail your brand, ultimate goals, and what you're looking for..."
+                            required></textarea>
                     </div>
-                    <button class="form-submit"><span>Send Message →</span></button>
-                </div>
+                    <button type="submit" class="form-submit"><span>Send Message →</span></button>
+                    <div id="form-result" style="margin-top: 20px; font-size: 0.9rem; letter-spacing: 0.05em;"></div>
+                </form>
             </div>
         </div>
     </section>
