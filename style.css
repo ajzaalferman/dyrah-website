@@ -1176,7 +1176,8 @@ footer {
   }
 
   #home {
-    padding: 0 24px 100px;
+    padding: 160px 24px 100px;
+    justify-content: center;
   }
 
   .hero-headline {
