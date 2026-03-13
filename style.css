@@ -1128,15 +1128,27 @@ footer {
 @media (max-width: 768px) {
   nav {
     flex-wrap: wrap;
-    row-gap: 20px;
-    padding: 20px 24px 16px;
+    justify-content: space-between;
+    row-gap: 16px;
+    padding: 16px 20px;
   }
 
   nav.scrolled {
-    padding: 16px 24px 12px;
+    padding: 12px 20px;
+  }
+
+  /* Force "Start a Project" button to stay in the top row alongside the logo */
+  .nav-cta {
+    order: 1;
+    /* Keep it on the same visual level as the logo */
+    padding: 10px 20px;
+    /* Make it slightly smaller for mobile */
+    font-size: 0.7rem;
   }
 
   .nav-links {
+    order: 2;
+    /* Push links to the second row */
     position: static;
     width: 100%;
     background: transparent;
@@ -1144,8 +1156,9 @@ footer {
     -webkit-backdrop-filter: none;
     display: flex;
     justify-content: center;
-    gap: 24px;
-    padding: 0;
+    gap: 16px;
+    /* slightly tighter gap */
+    padding: 4px 0 0;
     z-index: 100;
     border-top: none;
     margin: 0;
@@ -1154,7 +1167,7 @@ footer {
 
   .nav-links a {
     font-size: 0.75rem;
-    padding: 8px 0;
+    padding: 4px 0;
     letter-spacing: 0.05em;
   }
 
