@@ -60,7 +60,19 @@ lenis.on('scroll', (e) => {
 });
 
 // GSAP Animations
-gsap.registerPlugin(ScrollTrigger);
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+}
+
+// Active Nav Link Logic
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        link.style.color = 'var(--text)'; // Highlight active link
+    }
+});
 
 // Initial Load Animation
 const tl = gsap.timeline();
@@ -78,16 +90,19 @@ tl.fromTo(".nav-logo, .nav-links li, .nav-cta",
     );
 
 // Ticker Parallax
-gsap.to("#tickerText", {
-    xPercent: -20,
-    ease: "none",
-    scrollTrigger: {
-        trigger: "#home",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1
-    }
-});
+const tickerText = document.getElementById("tickerText");
+if (tickerText) {
+    gsap.to("#tickerText", {
+        xPercent: -20,
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#home",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1
+        }
+    });
+}
 
 // Scroll Animations (Fade Up)
 const fadeUps = document.querySelectorAll('.gs-up');
@@ -131,19 +146,22 @@ gsap.to(".marquee-track", {
 });
 
 // About Image Parallax
-gsap.fromTo("#aboutImg",
-    { scale: 1.2, y: -50 },
-    {
-        scale: 1, y: 50,
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".about-visual",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
+const aboutImg = document.getElementById("aboutImg");
+if (aboutImg) {
+    gsap.fromTo("#aboutImg",
+        { scale: 1.2, y: -50 },
+        {
+            scale: 1, y: 50,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".about-visual",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
         }
-    }
-);
+    );
+}
 
 // Number Counter Animation
 const counters = document.querySelectorAll('.counter');
