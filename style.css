@@ -1135,15 +1135,34 @@ footer {
   }
 
   .nav-links {
-    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    z-index: 100;
+    border-top: 1px solid var(--border);
+    margin: 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    padding: 8px 0;
+    letter-spacing: 0.05em;
   }
 
   section {
-    padding: 80px 24px;
+    padding: 120px 24px 80px;
   }
 
   #home {
-    padding: 0 24px 60px;
+    padding: 0 24px 100px;
   }
 
   .hero-headline {
@@ -1172,8 +1191,16 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .portfolio-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
   .portfolio-filter {
     flex-wrap: wrap;
+    gap: 12px;
   }
 
   .about-grid {
@@ -1201,7 +1228,7 @@ footer {
     flex-direction: column;
     gap: 32px;
     text-align: center;
-    padding: 40px 24px;
+    padding: 40px 24px 100px;
   }
 
   .scroll-indicator {
