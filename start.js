@@ -152,6 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const calDays = document.querySelectorAll(".cal-day.selectable");
     const timeSlotsBox = document.getElementById("time-slots");
     const dateLabel = document.getElementById("selected-date-label");
+    const customTimeGroup = document.getElementById("custom-time-group");
+    const customTimeInput = document.getElementById("custom-time-input");
 
     calDays.forEach(day => {
         day.addEventListener("click", () => {
@@ -168,8 +170,22 @@ document.addEventListener("DOMContentLoaded", () => {
             // Reset time state if new date selected
             state.time = null;
             document.querySelectorAll(".time-pill").forEach(p => p.classList.remove("selected"));
+            customTimeGroup.classList.remove("active");
 
-            timeSlotsBox.classList.remove("hidden");
+            // Animation for time slots reveal
+            if (timeSlotsBox.classList.contains("hidden")) {
+                timeSlotsBox.classList.remove("hidden");
+                gsap.fromTo(timeSlotsBox,
+                    { opacity: 0, y: 30, scaleY: 0.9 },
+                    { opacity: 1, y: 0, scaleY: 1, duration: 0.8, ease: "expo.out" }
+                );
+            } else {
+                gsap.fromTo(timeSlotsBox,
+                    { x: -5 },
+                    { x: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" }
+                );
+            }
+
             validateCurrentStep();
         });
     });
@@ -179,10 +195,28 @@ document.addEventListener("DOMContentLoaded", () => {
         pill.addEventListener("click", () => {
             document.querySelectorAll(".time-pill").forEach(p => p.classList.remove("selected"));
             pill.classList.add("selected");
-            state.time = pill.dataset.value;
+
+            if (pill.id === "custom-time-toggle") {
+                state.time = customTimeInput.value || null;
+                customTimeGroup.classList.add("active");
+                gsap.fromTo(customTimeGroup, { scaleX: 0.9 }, { scaleX: 1, duration: 0.4 });
+            } else {
+                state.time = pill.dataset.value;
+                customTimeGroup.classList.remove("active");
+            }
             validateCurrentStep();
         });
     });
+
+    // Custom time input listener
+    if (customTimeInput) {
+        customTimeInput.addEventListener("input", () => {
+            if (document.getElementById("custom-time-toggle").classList.contains("selected")) {
+                state.time = customTimeInput.value;
+                validateCurrentStep();
+            }
+        });
+    }
 
     // ----------------------------------------------------------------------
     // VALIDATION RULES
