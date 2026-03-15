@@ -194,9 +194,15 @@ document.addEventListener("DOMContentLoaded", () => {
             btnNext2.disabled = state.services.length === 0;
         }
 
-        // Step 3: Brief Brand Name length
+        // Step 3: All Brief fields required
         if (currentStepIndex === 3) {
-            btnNext3.disabled = state.brandName.trim().length < 2;
+            btnNext3.disabled = !(
+                state.brandName.trim().length >= 2 &&
+                state.brandIndustry.trim().length > 0 &&
+                state.brandAudience.trim().length > 0 &&
+                state.brandSuccess.trim().length > 0 &&
+                state.brandAdmire.trim().length > 0
+            );
         }
 
         // Step 4: Calendar Date + Time
