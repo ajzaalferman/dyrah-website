@@ -174,6 +174,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Time slots logic
+    document.querySelectorAll(".time-pill").forEach(pill => {
+        pill.addEventListener("click", () => {
+            document.querySelectorAll(".time-pill").forEach(p => p.classList.remove("selected"));
+            pill.classList.add("selected");
+            state.time = pill.dataset.value;
+            validateCurrentStep();
+        });
+    });
+
     // ----------------------------------------------------------------------
     // VALIDATION RULES
     // ----------------------------------------------------------------------
