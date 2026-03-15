@@ -260,8 +260,6 @@ document.addEventListener("DOMContentLoaded", () => {
         fbGroup.append("Timeline", state.timeline);
         fbGroup.append("Services_Selected", state.services.join(", "));
         fbGroup.append("Discovery_Call", `${state.date} at ${state.time}`);
-        // Remove 'email' input's default append because we rename it below nicely:
-        fbGroup.append("Client_Email", state.email);
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -284,11 +282,6 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.disabled = false;
             submitBtn.querySelector("span").textContent = "Error - Try Again";
         }
-    });
-
-    // Listen for Calendly booking event (dispatched in start.html)
-    document.addEventListener('appointmentScheduled', () => {
-        nextStep();
     });
 
     // Initialize state validation
