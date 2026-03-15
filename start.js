@@ -128,12 +128,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Brief Inputs (Step 3) Change Events
-    ["brand-name", "brand-industry", "brand-audience", "brand-success", "brand-admire"].forEach(id => {
+    const stateMap = {
+        "brand-name": "brandName",
+        "brand-industry": "brandIndustry",
+        "brand-audience": "brandAudience",
+        "brand-success": "brandSuccess",
+        "brand-admire": "brandAdmire"
+    };
+
+    Object.keys(stateMap).forEach(id => {
         const el = document.getElementById(id);
         if (el) {
             el.addEventListener("input", () => {
-                const stateKey = id.replace("brand-", "brand").replace(/-(.)/g, (m, c) => c.toUpperCase()); // camelCase
-                state[stateKey] = el.value;
+                state[stateMap[id]] = el.value;
                 validateCurrentStep();
             });
         }
