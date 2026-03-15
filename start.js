@@ -286,6 +286,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Listen for Calendly booking event (dispatched in start.html)
+    document.addEventListener('appointmentScheduled', () => {
+        nextStep();
+    });
+
     // Initialize state validation
     validateCurrentStep();
 });

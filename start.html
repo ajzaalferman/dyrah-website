@@ -11,6 +11,9 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Calendly link widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 
 <body>
@@ -198,78 +201,25 @@
                     <h2 class="step-title">Pick a time to talk</h2>
                     <p class="step-subtitle">30 minutes — we come prepared with ideas based on your brief.</p>
 
-                    <div class="calendar-shell">
-                        <div class="calendar-header">
-                            <button type="button" class="cal-nav">←</button>
-                            <div class="cal-month">March 2026</div>
-                            <button type="button" class="cal-nav">→</button>
-                        </div>
-                        <div class="calendar-grid">
-                            <div class="cal-day-label">Su</div>
-                            <div class="cal-day-label">Mo</div>
-                            <div class="cal-day-label">Tu</div>
-                            <div class="cal-day-label">We</div>
-                            <div class="cal-day-label">Th</div>
-                            <div class="cal-day-label">Fr</div>
-                            <div class="cal-day-label">Sa</div>
+                    <!-- Calendly Inline Widget -->
+                    <div class="calendly-inline-widget"
+                        data-url="https://calendly.com/dyrahagency/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                        style="min-width:320px;height:700px;"></div>
 
-                            <!-- Placeholder dates -->
-                            <div class="cal-day disabled">1</div>
-                            <div class="cal-day disabled">2</div>
-                            <div class="cal-day disabled">3</div>
-                            <div class="cal-day disabled">4</div>
-                            <div class="cal-day disabled">5</div>
-                            <div class="cal-day disabled">6</div>
-                            <div class="cal-day disabled">7</div>
-                            <div class="cal-day disabled">8</div>
-                            <div class="cal-day disabled">9</div>
-                            <div class="cal-day disabled">10</div>
-                            <div class="cal-day disabled">11</div>
-                            <div class="cal-day disabled">12</div>
-                            <div class="cal-day disabled">13</div>
-                            <div class="cal-day disabled">14</div>
-                            <div class="cal-day disabled">15</div>
-                            <div class="cal-day selectable" data-date="Mar 16, 2026">16</div>
-                            <div class="cal-day selectable" data-date="Mar 17, 2026">17</div>
-                            <div class="cal-day selectable" data-date="Mar 18, 2026">18</div>
-                            <div class="cal-day selectable" data-date="Mar 19, 2026">19</div>
-                            <div class="cal-day selectable" data-date="Mar 20, 2026">20</div>
-                            <div class="cal-day disabled">21</div>
-                            <div class="cal-day disabled">22</div>
-                            <div class="cal-day selectable" data-date="Mar 23, 2026">23</div>
-                            <div class="cal-day selectable" data-date="Mar 24, 2026">24</div>
-                            <div class="cal-day selectable" data-date="Mar 25, 2026">25</div>
-                            <div class="cal-day selectable" data-date="Mar 26, 2026">26</div>
-                            <div class="cal-day selectable" data-date="Mar 27, 2026">27</div>
-                            <div class="cal-day disabled">28</div>
-                            <div class="cal-day disabled">29</div>
-                            <div class="cal-day selectable" data-date="Mar 30, 2026">30</div>
-                            <div class="cal-day selectable" data-date="Mar 31, 2026">31</div>
-                            <div class="cal-day disabled"></div>
-                            <div class="cal-day disabled"></div>
-                            <div class="cal-day disabled"></div>
-                            <div class="cal-day disabled"></div>
-                        </div>
-                    </div>
-
-                    <div id="time-slots" class="time-slots hidden">
-                        <div class="slot-eyebrow" id="selected-date-label">Available times</div>
-                        <div class="pill-group slots">
-                            <div class="selection-pill time-pill" data-group="time" data-value="9:00 AM">9:00 AM</div>
-                            <div class="selection-pill time-pill" data-group="time" data-value="10:00 AM">10:00 AM</div>
-                            <div class="selection-pill time-pill" data-group="time" data-value="11:00 AM">11:00 AM</div>
-                            <div class="selection-pill time-pill" data-group="time" data-value="2:00 PM">2:00 PM</div>
-                            <div class="selection-pill time-pill" data-group="time" data-value="3:00 PM">3:00 PM</div>
-                            <div class="selection-pill time-pill" data-group="time" data-value="4:00 PM">4:00 PM</div>
-                        </div>
-                    </div>
-
-                    <p class="hint-text mt-3">Note: This UI serves as a placeholder. A live Calendly integration will be
-                        connected prior to launch.</p>
+                    <script type="text/javascript">
+                        window.addEventListener('message', function (e) {
+                            if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+                                if (e.data.event === 'calendly.event_scheduled') {
+                                    // Trigger navigation to Step 5
+                                    document.dispatchEvent(new CustomEvent('appointmentScheduled'));
+                                }
+                            }
+                        });
+                    </script>
 
                     <div class="wizard-actions">
                         <button type="button" class="wizard-btn back-btn">← Back</button>
-                        <button type="button" class="wizard-btn next-btn" id="btn-next-4" disabled>Continue →</button>
+                        <button type="button" class="wizard-btn next-btn" id="btn-next-4">I've Booked My Time →</button>
                     </div>
                 </div>
 
