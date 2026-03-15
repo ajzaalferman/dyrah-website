@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start a Project - Dyrah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="noise"></div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="index.html" class="nav-logo gs-fade" data-lenis-prevent><img src="logo.png" alt="Dyrah Logo"
+                class="brand-icon"><span class="logo-text">DYRAH</span></a>
+        <ul class="nav-links">
+            <li class="gs-fade"><a href="portfolio.html">Work</a></li>
+            <li class="gs-fade"><a href="services.html">Services</a></li>
+            <li class="gs-fade"><a href="about.html">About</a></li>
+            <li class="gs-fade"><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="start.html" class="nav-cta gs-fade">Start a Project</a>
+    </nav>
+
+    <!-- WIZARD CONTAINER -->
+    <section id="wizard-section" class="wizard-section">
+        <div class="wizard-container gs-up">
+
+            <!-- PROGRESS TRACKER -->
+            <div class="wizard-progress">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">4</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="5">5</div>
+            </div>
+
+            <form id="wizardForm" class="wizard-form">
+                <!-- STEP 1: QUALIFIER -->
+                <div class="wizard-step step-active" id="step-1">
+                    <div class="step-eyebrow">STEP 1 OF 5 — LET'S START</div>
+                    <h2 class="step-title">What's your budget range?</h2>
+                    <p class="step-subtitle">This helps us understand the right scope for your project.</p>
+
+                    <div class="budget-grid">
+                        <div class="wizard-card selection-card" data-group="budget" data-value="Starter">
+                            <div class="card-icon">💡</div>
+                            <div class="card-name">Starter</div>
+                            <div class="card-desc">Under $500 — Simple deliverable</div>
+                        </div>
+                        <div class="wizard-card selection-card" data-group="budget" data-value="Growth">
+                            <div class="card-icon">🚀</div>
+                            <div class="card-name">Growth</div>
+                            <div class="card-desc">$500 – $2,000 — Full brand or campaign</div>
+                        </div>
+                        <div class="wizard-card selection-card" data-group="budget" data-value="Premium">
+                            <div class="card-icon">✦</div>
+                            <div class="card-name">Premium</div>
+                            <div class="card-desc">$2,000+ — Comprehensive package</div>
+                        </div>
+                    </div>
+
+                    <div id="soft-exit-message" class="soft-exit-message hidden">
+                        We appreciate you reaching out. Our custom projects start at $500. If you're not quite there
+                        yet, follow us on Instagram — we post free resources every week. Come back whenever you're
+                        ready. 🙌 <br><br>
+                        <a href="https://www.instagram.com/dyrah.co" target="_blank" class="exit-link">@dyrah.co</a>
+                    </div>
+
+                    <div class="timeline-container">
+                        <h3 class="step-label">When do you need this?</h3>
+                        <div class="pill-group">
+                            <div class="selection-pill" data-group="timeline" data-value="ASAP">ASAP</div>
+                            <div class="selection-pill" data-group="timeline" data-value="Within a month">Within a month
+                            </div>
+                            <div class="selection-pill" data-group="timeline" data-value="1-2 months">1–2 months</div>
+                            <div class="selection-pill" data-group="timeline" data-value="Flexible">Flexible</div>
+                        </div>
+                    </div>
+
+                    <div class="wizard-actions right-align">
+                        <button type="button" class="wizard-btn next-btn" id="btn-next-1" disabled>Continue →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: DISCOVERY -->
+                <div class="wizard-step" id="step-2">
+                    <div class="step-eyebrow">STEP 2 OF 5 — SERVICES</div>
+                    <h2 class="step-title">What do you need?</h2>
+                    <p class="step-subtitle">Pick everything that applies — we'll scope it together.</p>
+
+                    <div class="services-grid-wizard">
+                        <div class="wizard-card selection-card multi-select" data-group="services"
+                            data-value="Brand Identity">
+                            <div class="card-icon">◈</div>
+                            <div class="card-name">Brand Identity</div>
+                            <div class="card-desc">Logo, colors, typography, visual guidelines</div>
+                        </div>
+                        <div class="wizard-card selection-card multi-select" data-group="services"
+                            data-value="Social Media">
+                            <div class="card-icon">⬡</div>
+                            <div class="card-name">Social Media</div>
+                            <div class="card-desc">Posts, stories, reels, templates</div>
+                        </div>
+                        <div class="wizard-card selection-card multi-select" data-group="services"
+                            data-value="Motion & Video">
+                            <div class="card-icon">▶</div>
+                            <div class="card-name">Motion & Video</div>
+                            <div class="card-desc">Reels, intros, animated motion graphics</div>
+                        </div>
+                        <div class="wizard-card selection-card multi-select" data-group="services"
+                            data-value="Digital Marketing">
+                            <div class="card-icon">✦</div>
+                            <div class="card-name">Digital Marketing</div>
+                            <div class="card-desc">Ads, strategy, growth analytics</div>
+                        </div>
+                        <div class="wizard-card selection-card multi-select" data-group="services"
+                            data-value="Illustration">
+                            <div class="card-icon">◐</div>
+                            <div class="card-name">Illustration</div>
+                            <div class="card-desc">Custom art, characters, vectors</div>
+                        </div>
+                        <div class="wizard-card selection-card multi-select" data-group="services"
+                            data-value="Ad Creative">
+                            <div class="card-icon">⬗</div>
+                            <div class="card-name">Ad Creative</div>
+                            <div class="card-desc">Static and animated ad designs</div>
+                        </div>
+                    </div>
+                    <p class="hint-text">Not sure what you need? Select all that feel relevant — we'll help narrow it
+                        down on the call.</p>
+
+                    <div class="wizard-actions">
+                        <button type="button" class="wizard-btn back-btn">← Back</button>
+                        <button type="button" class="wizard-btn next-btn" id="btn-next-2" disabled>Continue →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: BRIEF -->
+                <div class="wizard-step" id="step-3">
+                    <div class="step-eyebrow">STEP 3 OF 5 — YOUR BRIEF</div>
+                    <h2 class="step-title">Tell us about your brand</h2>
+                    <p class="step-subtitle">The more detail here, the sharper our ideas on the call.</p>
+
+                    <div class="brief-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Brand / Company Name</label>
+                                <input type="text" id="brand-name" class="form-input" placeholder="e.g. Astra Co."
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Industry</label>
+                                <input type="text" id="brand-industry" class="form-input"
+                                    placeholder="e.g. Fashion, SaaS, F&B">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Target Audience</label>
+                            <input type="text" id="brand-audience" class="form-input"
+                                placeholder="e.g. Young professionals, 25–35, urban">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">What does success look like?</label>
+                            <textarea id="brand-success" class="form-textarea"
+                                placeholder="e.g. A rebrand that feels premium and bold..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Brands or styles you admire</label>
+                            <input type="text" id="brand-admire" class="form-input"
+                                placeholder="e.g. Apple, Jacquemus, Notion — clean and minimal">
+                        </div>
+                    </div>
+
+                    <div class="wizard-actions">
+                        <button type="button" class="wizard-btn back-btn">← Back</button>
+                        <button type="button" class="wizard-btn next-btn" id="btn-next-3" disabled>Continue →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: CALENDAR -->
+                <div class="wizard-step" id="step-4">
+                    <div class="step-eyebrow">STEP 4 OF 5 — DISCOVERY CALL</div>
+                    <h2 class="step-title">Pick a time to talk</h2>
+                    <p class="step-subtitle">30 minutes — we come prepared with ideas based on your brief.</p>
+
+                    <div class="calendar-shell">
+                        <div class="calendar-header">
+                            <button type="button" class="cal-nav">←</button>
+                            <div class="cal-month">March 2026</div>
+                            <button type="button" class="cal-nav">→</button>
+                        </div>
+                        <div class="calendar-grid">
+                            <div class="cal-day-label">Su</div>
+                            <div class="cal-day-label">Mo</div>
+                            <div class="cal-day-label">Tu</div>
+                            <div class="cal-day-label">We</div>
+                            <div class="cal-day-label">Th</div>
+                            <div class="cal-day-label">Fr</div>
+                            <div class="cal-day-label">Sa</div>
+
+                            <!-- Placeholder dates -->
+                            <div class="cal-day disabled">1</div>
+                            <div class="cal-day disabled">2</div>
+                            <div class="cal-day disabled">3</div>
+                            <div class="cal-day disabled">4</div>
+                            <div class="cal-day disabled">5</div>
+                            <div class="cal-day disabled">6</div>
+                            <div class="cal-day disabled">7</div>
+                            <div class="cal-day disabled">8</div>
+                            <div class="cal-day disabled">9</div>
+                            <div class="cal-day disabled">10</div>
+                            <div class="cal-day disabled">11</div>
+                            <div class="cal-day disabled">12</div>
+                            <div class="cal-day disabled">13</div>
+                            <div class="cal-day disabled">14</div>
+                            <div class="cal-day disabled">15</div>
+                            <div class="cal-day selectable" data-date="Mar 16, 2026">16</div>
+                            <div class="cal-day selectable" data-date="Mar 17, 2026">17</div>
+                            <div class="cal-day selectable" data-date="Mar 18, 2026">18</div>
+                            <div class="cal-day selectable" data-date="Mar 19, 2026">19</div>
+                            <div class="cal-day selectable" data-date="Mar 20, 2026">20</div>
+                            <div class="cal-day disabled">21</div>
+                            <div class="cal-day disabled">22</div>
+                            <div class="cal-day selectable" data-date="Mar 23, 2026">23</div>
+                            <div class="cal-day selectable" data-date="Mar 24, 2026">24</div>
+                            <div class="cal-day selectable" data-date="Mar 25, 2026">25</div>
+                            <div class="cal-day selectable" data-date="Mar 26, 2026">26</div>
+                            <div class="cal-day selectable" data-date="Mar 27, 2026">27</div>
+                            <div class="cal-day disabled">28</div>
+                            <div class="cal-day disabled">29</div>
+                            <div class="cal-day selectable" data-date="Mar 30, 2026">30</div>
+                            <div class="cal-day selectable" data-date="Mar 31, 2026">31</div>
+                            <div class="cal-day disabled"></div>
+                            <div class="cal-day disabled"></div>
+                            <div class="cal-day disabled"></div>
+                            <div class="cal-day disabled"></div>
+                        </div>
+                    </div>
+
+                    <div id="time-slots" class="time-slots hidden">
+                        <div class="slot-eyebrow" id="selected-date-label">Available times</div>
+                        <div class="pill-group slots">
+                            <div class="selection-pill time-pill" data-group="time" data-value="9:00 AM">9:00 AM</div>
+                            <div class="selection-pill time-pill" data-group="time" data-value="10:00 AM">10:00 AM</div>
+                            <div class="selection-pill time-pill" data-group="time" data-value="11:00 AM">11:00 AM</div>
+                            <div class="selection-pill time-pill" data-group="time" data-value="2:00 PM">2:00 PM</div>
+                            <div class="selection-pill time-pill" data-group="time" data-value="3:00 PM">3:00 PM</div>
+                            <div class="selection-pill time-pill" data-group="time" data-value="4:00 PM">4:00 PM</div>
+                        </div>
+                    </div>
+
+                    <p class="hint-text mt-3">Note: This UI serves as a placeholder. A live Calendly integration will be
+                        connected prior to launch.</p>
+
+                    <div class="wizard-actions">
+                        <button type="button" class="wizard-btn back-btn">← Back</button>
+                        <button type="button" class="wizard-btn next-btn" id="btn-next-4" disabled>Continue →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 5: CONFIRMATION -->
+                <div class="wizard-step" id="step-5">
+                    <div class="success-icon">✓</div>
+                    <div class="step-eyebrow text-center">STEP 5 OF 5 — ALL SET</div>
+                    <h2 class="step-title text-center">You're on the list.</h2>
+                    <p class="step-subtitle text-center">Here's a summary of your brief. Expect a confirmation email
+                        shortly — and we'll come to the call with ideas already in mind.</p>
+
+                    <div class="summary-card">
+                        <div class="summary-row">
+                            <span class="sum-label">Brand:</span>
+                            <span class="sum-value" id="sum-brand">...</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="sum-label">Services:</span>
+                            <span class="sum-value" id="sum-services">...</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="sum-label">Budget:</span>
+                            <span class="sum-value" id="sum-budget">...</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="sum-label">Timeline:</span>
+                            <span class="sum-value" id="sum-timeline">...</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="sum-label">Call Set For:</span>
+                            <span class="sum-value" id="sum-call">...</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group email-final-group">
+                        <label class="form-label">Your Email — we'll send you a confirmation</label>
+                        <input type="email" id="final-email" class="form-input" placeholder="hello@company.com"
+                            required>
+                    </div>
+
+                    <div class="wizard-actions centered">
+                        <button type="button" class="wizard-btn back-btn outline-btn">← Back</button>
+                        <button type="button" class="wizard-submit" id="wizard-submit" disabled><span>Submit Brief
+                                →</span></button>
+                    </div>
+
+                    <div id="wizard-success-msg" class="wizard-success-msg hidden">
+                        Brief received. See you soon. ✦
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="index.html" class="footer-logo"><img src="logo.png" alt="Dyrah Logo" class="brand-icon"><span
+                class="logo-text">DYRAH</span></a>
+        <p class="footer-copy">© 2024 Dyrah Agency — Igniting Digital Experiences</p>
+        <div class="footer-socials">
+            <a href="https://www.behance.net/dyrah" target="_blank">Behance</a>
+            <a href="https://www.instagram.com/dyrah.co" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/company/dyrah" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script src="start.js"></script>
+</body>
+
+</html>
